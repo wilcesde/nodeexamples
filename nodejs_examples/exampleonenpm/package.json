@@ -1,0 +1,26 @@
+{
+  "name": "exampleonenpm",
+  "version": "1.0.0",
+  "description": "Ejemplo aprendiendo nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deci": "cowsay Hola vos"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilcesde/nodeexamples.git"
+  },
+  "keywords": [
+    "Aprendizaje"
+  ],
+  "author": "Wilcesde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilcesde/nodeexamples/issues"
+  },
+  "homepage": "https://github.com/wilcesde/nodeexamples#readme",
+  "dependencies": {
+    "cowsay": "^1.4.0"
+  }
+}
