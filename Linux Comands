@@ -1,0 +1,61 @@
+BD billing (facturacion)
+articulos
+servicios
+vendedor
+prestador_servicio
+adquiriente_bien_servicio
+
+------------------------------------------
+basic commands
++ls -l  (ver los usuarios y sus permisos)
++sudo -s  (Para convertirse en usuario root desde una cuenta sin privilegios (cuenta de usuario normal))
++apt-get (comando para instalar software en linux)
+ antes de instalar software ejecutar estos dos comandos para actualizar la instalacion. es una buena practica hacerlo
++apt (para ver informacion del comando)
++sudo apt-get update (Actualizar el listado de paquetes disponibles)
++sudo apt-get check  (Comprobar que todo ha ido bien tras la utilización de apt-get update)
++sudo apt-get upgrade (Actualizar solo los paquetes ya instalados que no necesitan, como dependencia, la instalación o desinstalación de otros paquetes)
+    ++sudo apt update -y && sudo apt upgrade -y    (Reemplaza en una sola instruccion update y upgrade separado)
++ls or dir (ver directorio de carpetas)
++ls or ls -al or ls -a (-al para ver los ocultos (son los que tienen punto .) y todo en una lista)
++pwd (ver en que directorio estoy ubicado)
++clear or Ctrl+l (limpiar la consola)
++cd / (ir a la raiz del disco or home)
++cd .. (para regresar al directorio anterior)
++mkdir nameFolder (create a directory)
++touch nameFile.ext (para crear archivos)
++cat nameFile.ext (para ver el contenido de un archivo)
++rm nameFile.ext (para borrar un archivo. Mirar con --rf)
++rm -R directorio_que_quieres_borrar (para borrar directorio y su contenido)
++rm -Rf directorio_que_quieres_borrar (para borrar directorio protegido y su contenido)
++rm --help (para ver como funciona un comando y que parametros adicionales pueden acompañarlo)
++history (para ver todos los comandos ejecutados hasta ese momento)
++!NumCommand (para volver a escribir el comando que quiero y que esta identificado con un numero)
++code . (para abrir VSC)
++Esc+i (para insertar texto en VIM)
++Esc+Shif+zz (para guardar y salir del editor vim)
+otra opcion es: ESC para salir, luego CRTL+C y luego ZZ o :wq
+
+-------------------------
+Crear una llave SSH (recomendado por cada PC que uses)
+-------------------------
++ssh-keygen -t rsa -b 4096 -C "c.wilcas@gmail.com"  para crear la llave ssh
++Hacer tres enter para confirmar la ruta y sin password
++eval $(ssh-agent -s) para verificar si el server ssh esta corriendo. debe aparecer Agent pid #### (entonces estara corriendo)
++ssh-add ~/.ssh/id_rsa  para agregar la llave al servidor
++cat .ssh/id_rsa.pub   (para ver la llave publica)
+
+----------------------------
+Conexion a github con SSH
+----------------------------
++copiar la llave publica que esta en ~/.ssh/id_rsa/
++ir a github/configuraciones/SSH and GPG Keys
++crear una llave, darle una descripcion y pegar el codigo de la llave publica
+aceptar y listo
++Ir al repositorio, hacer click en Clone or Download
+Click en use SSH
+Copy la url
+ir al local al directorio del proyecto
+git remote -v para ver las url del repositorio
+git remote set-url origin urlSSHCopiada   para cambiar la url de origin
+git remote -v para ver las url del repositorio en donde origin es hacia el url del SSH git@github.com:wilcasgil/billingplacetopaywcg.git

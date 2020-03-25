@@ -1,0 +1,70 @@
+Instalar nodejs
+En linux:
+    ++sudo apt update -y && sudo apt upgrade -y (si se desea actualizar primero las dependencias y repositorios en linux)
+    ++Instalar nvm (Node Version Manager), con el que se puede instalar diferentes versiones de nodejs
+        +++Ir a google, escribir nvm, ingresar al repositorio y copiar (wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash) pegarlo en la terminal
+        +++Terminal> wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+        +++Terminal> Exit y habrirla nuevamente
+        +++Terminal> nvm  (para verificar la instalacion)
+        +++Terminal> nvm install --lts   (instalar la ultima version de nodejs la version LTS "Lonten suport")
+        +++Terminal> node -v   (Verificar la instalacion de nodejs)
+
+        En Windows:
+            puedes usar windows sin problemas solo debemos tener en cuenta que en este SO toca emular muchas cosas , por lo que primero debes instalar Git , también te recomiendo que instales un subsistema de linux (para que te salga una consola de windows ) y luego solo descargar esto , aunque puede que esto ultimo sea lo único que necesites .
+            https://nodejs.org/es/download/ paquete de instalación
+            https://cmder.net/ para emular la consola de windows
+
+        Instalar diferentes versiones de nodejs
+            La última versión es 10.16.0 pero te recomiendo que uses la del curso para no tener problemas de compatibilidad con algunas librerías o sintaxis,
+            con nvm puedes tener más de una versión de node, sólo haces nvm-ls resmote, buscas la versión que desees e instalas con nvm instal [version]
+            y puedes cambiar a la versión que desees usando nvm use [version]
+
+Abrir un editor de codigo (VSC). Instalarlo
+        +++Terminal> sudo dpkg --install Downloads/code_1.27...
+            +++Terminal> sudo apt install libraryName  && Si hay problemas ejecutar sudo apt update primero y luego intentar instalar la library
+        +++Terminal> code . (abrir VSC)
+ 
+        +++Estando en VSC, abrir la terminal interna y
+Utilitario para ejecutar codigo javascript. Se puede en VSC. Primer codigo en nodejs
+        Terminal> man node   (para ver los comandos que se pueden ejecutar)
+        Terminal> q   (para salir de la biblioteca de los comandos)
+        Terminal> node   (permite ingresar al CLI (REPL) de nodejs, para ingresar al utilitario, escribir codigo javascript y ejecutarlo)
+        Terminal> .help   (para ver los comandos basicos del REPL)
+            repl> var x = 4 + 3;    (ej. de primer codigo javascript en el repl)
+            repl> x  (imprimir resultado de la variable x)
+            repl> function greeting() {
+                ... return "Hello, welcome to nodejs!";
+                ... }
+            repl> greeting()    (para ver el resultado de la funcion)
+            repl> .exit (salir del REPL)
+        Terminal>
+
+Ejecutar script (archivos.js) desde la terminal: Se crea un archivo .js normal con funciones y para ejecutarlo (correr ese script se hace:
+        Terminal> node fileName.js
+
+Create project of node: npm "node pakage management" es un utilitario que hace parte de node y se utiliza para gestionar paquetes o dependencias de node y para otros fines como por ejemplo la inicializacion de projecs
+npm en realidad no es una abreviatura para "node package manager", sino un retroacronimo para "npm is not an acronym"
+
+        Terminal> mkdir folderName   (create folder for project)
+        Terminal> cd folderName
+            NOTA: cd folderName && mkdir newFolderName && cd newFolderName  (Esta instruccion reemplaza las dos anteriores)
+        Terminal> npm init   (iniciar el project, responder las questions para los datos generales del project) o npm init -y (para crear el project con datos por defecto)
+                package name: (proyecto)  (dejar por defecto)
+                version: (1.0.0)   (tambien dejar por defecto)
+                description: bla, bla, bla, etc (importante para la metadata en los motores de busqueda).
+                entry point: (index.js)   (file desde el cual se va a ejecutar el project)
+                test command:   (es el comando de ejecucion de prueba, por el momento dejarlo asi)
+                git repository:    (si se quiere referenciar a algun repositorio, por el momento de jarlo asi)
+                keywords: Proyecto academico (terminos clave para metadatas)
+                author: Wilcasgil
+                license: (ISC)  (dejar esta por defecto) y enter
+                Is this OK? (yes) y enter. Los datos se guardan en un file llamado package.json
+        Se crea la carpeta del proyecto con el archivo package.json
+        Terminal> cd folderNameProject
+        Terminal> code .   (para abrir VSC en el folder del project)
+        Terminal> npm ls    (verificar si el project tiene dependencias)
+        Terminal> npm install cowsay      (dependencia popular que permite aprender de npm. Se trata de una consola que presenta la imagen de una vaca diciendo un comentario)
+            Escribir: "deci": "cowsay Hola vos"  en el file package.json, dentro de "scripts". View file in folder project
+        Terminal> npm run deci    (ejecutar el comando say del script, el cual ejecuta la dependencia cowsay la cual a su vez nos muestra el saludo por medio de la vaca)
+
+        
